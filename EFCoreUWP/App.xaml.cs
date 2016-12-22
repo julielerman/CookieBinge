@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Microsoft.EntityFrameworkCore;
 
 namespace EFCoreUWP
 {
@@ -30,7 +31,13 @@ namespace EFCoreUWP
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
-        }
+      using (var db = new BingeContext())
+      {
+        db.Database.EnsureDeleted();
+        db.Database.EnsureCreated();
+        db.Database.Migrate();
+      }
+    }
 
         /// <summary>
         /// Invoked when the application is launched normally by the end user.  Other entry points
