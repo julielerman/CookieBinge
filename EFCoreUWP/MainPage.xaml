@@ -8,10 +8,10 @@
     mc:Ignorable="d" Loaded="Page_Loaded">
 
     <Grid x:Name="MainGrid" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-     
+
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="400" />
+            <ColumnDefinition />
+            <ColumnDefinition Width="277" />
         </Grid.ColumnDefinitions>
 
         <Grid Name="BingePane" Grid.Column="0">
@@ -36,7 +36,11 @@
                 	Margin="0,63,296,9" 
                 	FontSize="30" 
                 	Content="It was worth it!"
-                	Visibility="{Binding StopControlsVisibility}" Click="WorthIt_Click" Foreground="#FFD00A0A" HorizontalAlignment="Right" Width="242" Height="54"/>
+                	Visibility="{Binding StopControlsVisibility}" Click="WorthIt_Click" Foreground="#FFD00A0A" HorizontalAlignment="Right" Width="242" Height="54">
+                    <!--<Button.RenderTransform>
+                        <ScaleTransform ScaleX="1.5" ScaleY="1.0" />
+                    </Button.RenderTransform>-->
+                </Button>
                 <Button 
                 	x:Name="AddCookies_Copy1" 
                 	Margin="0,63,39,9" 
@@ -72,7 +76,7 @@
                 </Grid>
             </Grid>
         </Grid>
-        <TextBlock x:Name="NomText" HorizontalAlignment="Left" Margin="361,179,0,0" TextWrapping="Wrap" Text="Nom!" FontSize="48" FontWeight="Bold" Foreground="#FFDBF707" Height="51" VerticalAlignment="Top"/>
+        <TextBlock x:Name="NomText" HorizontalAlignment="Left" Margin="84,179,0,0" TextWrapping="Wrap" Text="Nom!" FontSize="48" FontWeight="Bold" Foreground="#FFDBF707" Height="51" VerticalAlignment="Top" Grid.Column="1" Width="44"/>
 
         <StackPanel Name="ScorePane" Grid.Column="1" Background="#FF494646">
             <TextBlock FontSize="30" Text="Your Latest Binges" Margin="15" />
