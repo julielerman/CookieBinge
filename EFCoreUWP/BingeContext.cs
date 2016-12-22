@@ -8,7 +8,7 @@ namespace EFCoreUWP {
     public DbSet<CookieBinge> Binges { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder options) {
-#if WINDOWS_UWP
+
       var databaseFilePath = "CookieBinge.db";
       try {
            databaseFilePath = Path.Combine(ApplicationData.Current.LocalFolder.Path, databaseFilePath);
