@@ -53,5 +53,8 @@ namespace EFCoreUWP {
     private void Image_PointerReleased(object sender, PointerRoutedEventArgs e) {
       NomText.Visibility = Visibility.Collapsed;
     }
+
+    
+
   }
 }
