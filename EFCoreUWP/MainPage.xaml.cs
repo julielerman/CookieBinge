@@ -42,7 +42,7 @@ namespace EFCoreUWP {
       _binge.StoreBinge(false);
     }
 
-    private void Image_PointerPressed(object sender, PointerRoutedEventArgs e) {
+   private void CookieImage_PointerPressed(object sender, PointerRoutedEventArgs e) {
       var pt = e.GetCurrentPoint(MainGrid);
       NomText.Margin = new Thickness(pt.Position.X, pt.Position.Y, 0, 0);
 
@@ -50,11 +50,8 @@ namespace EFCoreUWP {
       _binge.HandleClick();
     }
 
-    private void Image_PointerReleased(object sender, PointerRoutedEventArgs e) {
+    private void CookieImage_PointerReleased(object sender, PointerRoutedEventArgs e) {
       NomText.Visibility = Visibility.Collapsed;
     }
-
-    
-
   }
 }

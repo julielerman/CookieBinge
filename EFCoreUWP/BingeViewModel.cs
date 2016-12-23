@@ -60,6 +60,7 @@ namespace EFCoreUWP {
       BingeService.RecordBinge(_clickCount, worthIt);
       StartControlsVisibility = Visibility.Visible;
       StopControlsVisibility = Visibility.Collapsed;
+      Binging = false;
       OnBingeCompleted();
     }
 
