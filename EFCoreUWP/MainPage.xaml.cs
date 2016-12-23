@@ -43,15 +43,35 @@ namespace EFCoreUWP {
     }
 
    private void CookieImage_PointerPressed(object sender, PointerRoutedEventArgs e) {
-      var pt = e.GetCurrentPoint(BingeGrid);
+     
+     if (_binge.Binging)
+     {
+        ((Image)sender).CapturePointer(e.Pointer);
+
+        var pt = e.GetCurrentPoint(BingeGrid);
       NomText.Margin = new Thickness(pt.Position.X, pt.Position.Y, 0, 0);
 
       NomText.Visibility = Visibility.Visible;
       _binge.HandleClick();
+        ReloadHistory();
+   
+      }
     }
 
     private void CookieImage_PointerReleased(object sender, PointerRoutedEventArgs e) {
+      ((Image)sender).ReleasePointerCapture(e.Pointer);
+
       NomText.Visibility = Visibility.Collapsed;
     }
+
+    private void CookieImage_Tapped(object sender, TappedRoutedEventArgs e) {
+      
+    }
+
+    private void ClearHistory_Click(object sender, RoutedEventArgs e) {
+      BingeService.ClearHistory();
+      ReloadHistory();
+    }
   }
+  
 }

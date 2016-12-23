@@ -33,7 +33,7 @@ namespace EFCoreUWP
             this.Suspending += OnSuspending;
       using (var db = new BingeContext())
       {
-        db.Database.EnsureDeleted();
+        //db.Database.EnsureDeleted();
         db.Database.EnsureCreated();
         db.Database.Migrate();
       }

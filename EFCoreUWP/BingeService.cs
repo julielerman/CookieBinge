@@ -26,5 +26,14 @@ namespace EFCoreUWP {
         return latestBinges;
       }
     }
+
+    public static void ClearHistory()
+    {
+      using (var context = new BingeContext())
+      {
+        context.Database.EnsureDeleted();
+        context.Database.EnsureCreated();
+      }
+    }
   }
 }
