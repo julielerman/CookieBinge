@@ -23,9 +23,9 @@ namespace EFCoreUWP {
       BingeList.ItemsSource = BingeService.GetLast5Binges();
     }
 
-    private void Image_Tapped(object sender, TappedRoutedEventArgs e) {
-      _binge.HandleClick();
-    }
+    //private void Image_Tapped(object sender, TappedRoutedEventArgs e) {
+    //  _binge.HandleClick();
+    //}
 
     private void Play_Tapped(object sender, TappedRoutedEventArgs e) {
       _binge.StartNewBinge();
@@ -43,7 +43,7 @@ namespace EFCoreUWP {
     }
 
    private void CookieImage_PointerPressed(object sender, PointerRoutedEventArgs e) {
-      var pt = e.GetCurrentPoint(MainGrid);
+      var pt = e.GetCurrentPoint(BingeGrid);
       NomText.Margin = new Thickness(pt.Position.X, pt.Position.Y, 0, 0);
 
       NomText.Visibility = Visibility.Visible;

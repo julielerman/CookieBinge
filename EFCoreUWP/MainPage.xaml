@@ -23,9 +23,8 @@
         <Pivot x:Name="rootPivot" Title="Cookie Binging" Grid.Row="1" Grid.ColumnSpan="2" Margin="0,0,10,0" Grid.RowSpan="2">
             <PivotItem Header="Game" Margin="12,0,10,3">
                 <Grid x:Name="BingePane" Grid.Column="0" BorderThickness="1" BorderBrush="Black">
-                    <TextBlock x:Name="NomText" HorizontalAlignment="Left"  TextWrapping="Wrap" Text="Nom!" FontSize="16" FontWeight="Bold" Foreground="#FFFBFBF8" Height="28" VerticalAlignment="Top" Width="47" Margin="126,29,0,0"/>
 
-                    <Grid Margin="0,1,1,49">
+                    <Grid x:Name="BingeGrid" Margin="0,1,1,49">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="91" />
                             <RowDefinition />
@@ -66,7 +65,7 @@
 
                                 <Image x:Name="CookieImage" 
                 		Source="Assets/Cookie.png" 
-                		Tapped="Image_Tapped" Margin="-11,-12,10,0" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False" IsTapEnabled="True" PointerPressed="CookieImage_PointerPressed" PointerReleased="CookieImage_PointerReleased" />
+                		Margin="-11,-12,10,0" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False" IsTapEnabled="True" PointerPressed="CookieImage_PointerPressed" PointerReleased="CookieImage_PointerReleased" />
                             </Grid>
                             <StackPanel Orientation="Horizontal" Margin="0,10,10,64">
                                 <TextBlock Margin="0,0,10,0" FontSize="30" Text="Cookies Eaten: " Width="206" />
@@ -74,24 +73,28 @@
                             </StackPanel>
                         </StackPanel>
                     </Grid>
+                    <TextBlock x:Name="NomText" HorizontalAlignment="Left"  TextWrapping="Wrap" Text="Nom!" FontSize="16" FontWeight="Bold" Foreground="#FFFBFBF8" Height="28" VerticalAlignment="Top" Width="47" Margin="130,112,0,0"/>
                 </Grid>
 
 
             </PivotItem>
-  <PivotItem Header="Scores">
+            <PivotItem Header="Scores">
+
                 <StackPanel Name="ScorePane" Grid.Column="1" Background="#FF494646">
-                    <TextBlock FontSize="30" Text="Your Latest Binges" Margin="15" />
-                    <Image 
-            	Source="Assets/many cookies.png" Height="95" Margin="286,0,0,0" 
+                    <StackPanel Orientation="Horizontal" >
+                        <TextBlock FontSize="24" Text="Your Latest Binges" Margin="15" Foreground="#FFF9F9F9" />
+                        <Image 
+            	Source="Assets/many cookies.png" Height="34" Margin="0,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Right" Width="93" 
                     />
+                    </StackPanel>
                     <ListView ItemsSource="{Binding .}" Margin="5,10,5,0" Name="BingeList" HorizontalContentAlignment="Stretch">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <Border BorderBrush="White" BorderThickness="2" CornerRadius="10" Padding="5" Margin="5,5,5,0">
                                     <StackPanel>
                                         <StackPanel Orientation="Horizontal">
-                                            <TextBlock FontSize="25" Text="Cookies Consumed:" Margin="0,0,10,0" />
-                                            <TextBlock FontSize="25" Text="{Binding HowMany}" />
+                                            <TextBlock FontSize="20" Text="Cookies Consumed:" Margin="0,0,10,0" />
+                                            <TextBlock FontSize="20" Text="{Binding HowMany}" />
                                         </StackPanel>
                                         <StackPanel Orientation="Horizontal">
                                             <TextBlock FontSize="18" Text="When it Happened:" Margin="0,0,5,0" />
