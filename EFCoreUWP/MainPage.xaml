@@ -78,7 +78,38 @@
 
 
             </PivotItem>
-            <PivotItem Header="Scores"/>
+  <PivotItem Header="Scores">
+                <StackPanel Name="ScorePane" Grid.Column="1" Background="#FF494646">
+                    <TextBlock FontSize="30" Text="Your Latest Binges" Margin="15" />
+                    <Image 
+            	Source="Assets/many cookies.png" Height="95" Margin="286,0,0,0" 
+                    />
+                    <ListView ItemsSource="{Binding .}" Margin="5,10,5,0" Name="BingeList" HorizontalContentAlignment="Stretch">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Border BorderBrush="White" BorderThickness="2" CornerRadius="10" Padding="5" Margin="5,5,5,0">
+                                    <StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock FontSize="25" Text="Cookies Consumed:" Margin="0,0,10,0" />
+                                            <TextBlock FontSize="25" Text="{Binding HowMany}" />
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock FontSize="18" Text="When it Happened:" Margin="0,0,5,0" />
+                                            <TextBlock FontSize="18" Text="{Binding TimeOccurred}" />
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock FontSize="18" Text="Worth it?" Margin="0,0,5,0" />
+                                            <TextBlock FontSize="18" Text="{Binding WorthIt}" Margin="0,0,5,0" />
+
+                                        </StackPanel>
+
+                                    </StackPanel>
+                                </Border>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackPanel>
+            </PivotItem>
         </Pivot>
 
     </Grid>
