@@ -62,13 +62,13 @@
                         <StackPanel Grid.Row="2" Margin="26,0,33,10">
                             <Grid x:Name="ImageGrid" Grid.Row="1">
 
-                                <TextBlock x:Name="NomText" HorizontalAlignment="Left"  TextWrapping="Wrap" Text="Nom!" FontSize="48" FontWeight="Bold" Foreground="#FFDBF707" Height="75" VerticalAlignment="Top" Width="133" Margin="86,28,0,0" Grid.Row="1" Grid.ColumnSpan="3" Grid.Column="1"/>
-
                                 <Image 
                 		Source="Assets/Cookie.png" 
                 		Tapped="Image_Tapped" Margin="-11,-12,10,0" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False" IsTapEnabled="True" />
+
+                                <TextBlock x:Name="NomText" HorizontalAlignment="Left"  TextWrapping="Wrap" Text="Nom!" FontSize="48" FontWeight="Bold" Foreground="#FFDBF707" Height="75" VerticalAlignment="Top" Width="133" Margin="53,40,0,0"/>
                             </Grid>
-                            <StackPanel Orientation="Horizontal" Margin="0,10,61,64">
+                            <StackPanel Orientation="Horizontal" Margin="0,10,10,64">
                                 <TextBlock Margin="0,0,10,0" FontSize="30" Text="Cookies Eaten: " Width="206" />
                                 <TextBlock FontSize="30" x:Name="ClickCount" Text="{Binding ClickCount}" RenderTransformOrigin="0.5,0.5" Width="51" />
                             </StackPanel>
