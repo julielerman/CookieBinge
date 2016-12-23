@@ -60,7 +60,7 @@
                             <Image Source="Assets/Emoticon_Dead_Orange.png" Margin="-10,-6" Width="52" Height="52"/>
                         </Button>
 
-                        <StackPanel Grid.Row="2" Margin="16,0,33,0">
+                        <StackPanel Grid.Row="2" Margin="16,0,10,0">
                             <Grid x:Name="ImageGrid" Grid.Row="1">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="0*"/>
@@ -72,8 +72,8 @@
                 		Margin="10,0,10,0" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False" IsTapEnabled="True" PointerPressed="CookieImage_PointerPressed" PointerReleased="CookieImage_PointerReleased" Tapped="CookieImage_Tapped" Grid.RowSpan="2" />
                             </Grid>
                             <StackPanel Orientation="Horizontal" Margin="0,10,10,64">
-                                <TextBlock Margin="0,0,10,0" FontSize="30" Text="Cookies Eaten: " Width="199" />
-                                <TextBlock FontSize="30" x:Name="ClickCount" Text="{Binding ClickCount}" RenderTransformOrigin="0.5,0.5" Width="51" />
+                                <TextBlock Margin="0,0,10,0" FontSize="30" Text="Cookies Eaten: " Width="198" />
+                                <TextBlock FontSize="30" x:Name="ClickCount" Text="{Binding ClickCount}" RenderTransformOrigin="0.5,0.5" Width="83" />
                             </StackPanel>
                         </StackPanel>
                     </Grid>
@@ -86,10 +86,10 @@
 
                 <StackPanel Name="ScorePane" Grid.Column="1" Background="#FF494646">
 
-                    <StackPanel Orientation="Horizontal" >
-                        <TextBlock FontSize="24" Text="Your Latest Binges" Margin="15" Foreground="#FFF9F9F9" />
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0" Width="322" Height="57" VerticalAlignment="Center" >
+                        <TextBlock FontSize="20"  Text="Your Latest Binges" Margin="1,11,1,11.875" Foreground="#FFF9F9F9" Width="254" TextAlignment="Center"/>
                         <Image 
-            	Source="Assets/many cookies.png" Height="34" Margin="0,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Right" Width="93" 
+            	Source="Assets/many cookies.png" Height="34" Margin="0" VerticalAlignment="Center" HorizontalAlignment="Left" Width="61" 
                     />
                     </StackPanel>
                     <ListView ItemsSource="{Binding .}" Margin="5,10,5,0" x:Name="BingeList" HorizontalContentAlignment="Stretch">
@@ -116,7 +116,7 @@
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
-                    <Button x:Name="ClearHistory" Content="Clear History" Click="ClearHistory_Click" FontSize="16" Background="#33F9F8F8" Foreground="#FFF7F7F7" Width="117" VerticalAlignment="Bottom" Height="31" HorizontalAlignment="Stretch" Margin="105,0,104,0"/>
+                    <Button x:Name="ClearHistory" Content="Clear History" Click="ClearHistory_Click" FontSize="16" Background="#33F9F8F8" Foreground="#FFF7F7F7" Width="117" VerticalAlignment="Bottom" Height="31" HorizontalAlignment="Stretch" Margin="0"/>
 
                 </StackPanel>
 
